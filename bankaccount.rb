@@ -6,7 +6,10 @@ $accounts = []
 class BankAccount
 
 	# This replaces the method def name @name end
-	attr_reader :name, :balance
+	attr_reader :balance
+
+	# This consists of two methods: 'attr_reader' and 'attr_writer' (which is equiv to def name=(new_name) @name = new_name end - allows us to change the name with account.name = "Bob", for example)
+	attr_accessor :name
 
 	def initialize
 		print "Account holder's name?\n"
