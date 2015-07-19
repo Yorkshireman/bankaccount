@@ -1,10 +1,16 @@
 print "Methods available:\nnewAccount\naddFunds\nburnMoney\nbalance\n" 
 
+#How can I not have this as a global variable and make it accessible within the class and also outside it?
+$accounts = []
+
 class BankAccount
+
 	def initialize
 		print "Account holder's name?\n"
 		@name = gets.chomp
 		@balance = 0
+
+		$accounts << self
 	end
 
 	def addFunds
