@@ -1,10 +1,31 @@
+print "Methods available:\nnewAccount\naddFunds\nburnMoney\nbalance\n" 
+
 class BankAccount
 	def initialize
-		puts "What is your name?"
-		@name = gets.chomp 
+		print "Account holder's name?\n"
+		@name = gets.chomp
+		@balance = 0
 	end
-end
 
-def newAccount
-	BankAccount.new
+	def addFunds
+		puts "How much would you like to add?"
+		deposit = gets.chomp.to_i
+		@balance += deposit
+		return "#{@name}'s new balance is $#{@balance}"
+	end
+
+	def burnMoney
+		puts "How much money would you like to burn?"
+		money_to_burn = gets.chomp.to_i
+		@balance +- money_to_burn
+		return "#{@name}'s new balance is $#{@balance}"
+	end
+
+	def balance
+		return "#{@name}'s balance = $#{@balance}"
+	end
+
+	def name
+		@name
+	end
 end
