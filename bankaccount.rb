@@ -1,7 +1,19 @@
 puts "Methods available:\nnewAccount\naddFunds\nburnMoney\nbalance\n" 
 
 #How can I not have this as a global variable and make it accessible within the class and also outside it?
-$accounts = []
+
+class Bank
+	attr_reader :accounts
+
+	def initialize
+		@accounts = []
+	end
+
+	def new_account
+		@accounts.push(BankAccount.new)
+	end
+end
+
 
 class BankAccount
 
@@ -15,8 +27,6 @@ class BankAccount
 		print "Account holder's name?\n"
 		@name = gets.chomp
 		@balance = 0
-
-		$accounts << self
 	end
 
 	def addFunds
