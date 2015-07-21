@@ -2,6 +2,7 @@ puts "Methods available:\nnewAccount\naddFunds\nburnMoney\nbalance\n"
 
 #How can I not have this as a global variable and make it accessible within the class and also outside it?
 
+
 class Bank
 	attr_reader :accounts
 
